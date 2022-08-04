@@ -8,9 +8,9 @@ namespace VakaIki
 {
     public class Robot
     {
-        private readonly int MaxX;     
-        private readonly int MaxY;
-        private readonly int FullRoundLength; 
+        private readonly int maxX;     
+        private readonly int maxY;
+        private readonly int fullRoundLength; 
 
         private int currentLocation = 0;
         private int currentX = 0;
@@ -28,9 +28,9 @@ namespace VakaIki
 
         public Robot(int width, int height)
         {
-            MaxX = width < 2 ? 1 : ( width - 1 ) ;
-            MaxY = height > 100 ? 99 : (height - 1);
-            FullRoundLength = (MaxX + MaxY) * 2;
+            maxX = width < 2 ? 1 : ( width - 1 ) ;
+            maxY = height > 100 ? 99 : (height - 1);
+            fullRoundLength = (maxX + maxY) * 2;
         }
 
         public void Step(int num)
@@ -39,7 +39,7 @@ namespace VakaIki
             if (num > 1000) num = 1000;
 
             currentLocation += num;
-            currentLocation %= FullRoundLength;
+            currentLocation %= fullRoundLength;
 
             currentX = -1;
         }
@@ -65,29 +65,29 @@ namespace VakaIki
                 direction = Direction.South;
                 currentX = currentY = 0;
             }
-            else if (currentLocation <= MaxX)
+            else if (currentLocation <= maxX)
             {
                 direction = Direction.East;
                 currentX = currentLocation;
                 currentY = 0;
             }
-            else if (currentLocation <= MaxX + MaxY)
+            else if (currentLocation <= maxX + maxY)
             {
                 direction = Direction.North;
-                currentX = MaxX;
-                currentY = currentLocation - MaxX;
+                currentX = maxX;
+                currentY = currentLocation - maxX;
             }
-            else if (currentLocation <= MaxX + MaxY + MaxX)
+            else if (currentLocation <= maxX + maxY + maxX)
             {
                 direction = Direction.West;
-                currentX = MaxX - (currentLocation - MaxX - MaxY);
-                currentY = MaxY;
+                currentX = maxX - (currentLocation - maxX - maxY);
+                currentY = maxY;
             }
             else
             {
                 direction = Direction.South;
                 currentX = 0;
-                currentY = MaxY - (currentLocation - MaxX - MaxY - MaxX);
+                currentY = maxY - (currentLocation - maxX - maxY - maxX);
             }
         }
     }

@@ -6,30 +6,12 @@ namespace VakaBir
     {
         static void Main(string[] args)
         {
-            //var b = new int[] { 1, 4, 9, 5, 3, 7 };
-            var b = new int[] { 7, 1, 5, 3, 6, 4 };
-            //var c = new int[] { 37, , 5, 3, 6, 4 };
-            var a = Calculate(b);
-            Console.WriteLine(a);
+            var r = new int[] { 7, 1, 5, 3, 6, 4 };
+            //var r = new int[] { 37, , 5, 3, 6, 4 };
+            var response = Calculate(r);
+            Console.WriteLine(response);
 
         }
-
-       //static int Calculate(int[] prices)
-       // {
-       //     int maxDiff = 0;
-       //     for (int i = 0; i < prices.Length -1 ; i++)
-       //     {
-       //         for (int j = i + 1; j < prices.Length; j++)
-       //         {
-       //             if (prices[j] > prices[i])
-       //             {
-       //                 maxDiff = Math.Max(maxDiff, prices[j]  - prices[i]);
-       //             }
-       //         }
-       //     }
-
-       //     return maxDiff;
-       // }
 
         static int Calculate(int[] prices)
         {
