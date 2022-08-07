@@ -21,7 +21,7 @@ namespace VakaBir
             int minElement = prices[0];
             int maxDiff = prices[1] - prices[0];
 
-            for (int i = 1; i < prices.Length - 1; i++)
+            for (int i = 1; i < prices.Length; i++)
             {
                 if ((prices[i] - minElement) > maxDiff)
                     maxDiff = prices[i] - minElement;
