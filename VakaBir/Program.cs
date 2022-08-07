@@ -15,6 +15,9 @@ namespace VakaBir
 
         static int Calculate(int[] prices)
         {
+            if (prices.Length == 1 || prices.Length >= 10000)
+                return 0;
+
             int minElement = prices[0];
             int maxDiff = prices[1] - prices[0];
 
